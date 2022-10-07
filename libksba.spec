@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x528897B826403ADA
 #
 Name     : libksba
-Version  : 1.6.1
-Release  : 19
-URL      : https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.1.tar.bz2
-Source0  : https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.1.tar.bz2
-Source1  : https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.1.tar.bz2.sig
+Version  : 1.6.2
+Release  : 20
+URL      : https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.2.tar.bz2
+Source0  : https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.2.tar.bz2
+Source1  : https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.2.tar.bz2.sig
 Summary  : X.509 and CMS support library
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-3.0
@@ -77,15 +77,15 @@ license components for the libksba package.
 
 
 %prep
-%setup -q -n libksba-1.6.1
-cd %{_builddir}/libksba-1.6.1
+%setup -q -n libksba-1.6.2
+cd %{_builddir}/libksba-1.6.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1663605495
+export SOURCE_DATE_EPOCH=1665177743
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -105,7 +105,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1663605495
+export SOURCE_DATE_EPOCH=1665177743
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libksba
 cp %{_builddir}/libksba-%{version}/COPYING.GPLv2 %{buildroot}/usr/share/package-licenses/libksba/4cc77b90af91e615a64ae04893fdffa7939db84c
@@ -134,7 +134,7 @@ cp %{_builddir}/libksba-%{version}/COPYING.LGPLv3 %{buildroot}/usr/share/package
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libksba.so.8
-/usr/lib64/libksba.so.8.14.1
+/usr/lib64/libksba.so.8.14.2
 
 %files license
 %defattr(0644,root,root,0755)
